@@ -1,16 +1,18 @@
 <?php
 
 class Product{
+
+    private int $id;
     private String $productName; 
     private float $price;
 
-    //constructor populates the attributes
-    public function __construct($productName, $price)
+    //constructor populates attributes
+    public function __construct($id, $productName, $price)
     {
+        $this->id = $id;
         $this->productName = $productName; 
         $this->price = $price;
     }
-
     
     /**
      * Get the value of productName
@@ -48,6 +50,27 @@ class Product{
     public function setPrice($price)
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
 
         return $this;
     }
